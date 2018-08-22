@@ -21,7 +21,7 @@ var (
 
 func main() {
 	flag.Parse()
-	dial(*dialAddress)
+	go dial(*dialAddress)
 	l, err := net.Listen("tcp", *listenAddress)
 	if err != nil {
 		log.Fatal(err)
